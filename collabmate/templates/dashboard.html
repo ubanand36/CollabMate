@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Mentor Search</title>
+
+<link rel="stylesheet" href="/static/css/about.css">
+<link rel="stylesheet" href="/static/css/search.css">
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+<script src="/static/firebase/firebase-config.js"></script>
+<script src="/static/js/firebase-auth.js"></script>
+<script src="/static/js/search.js"></script>
+
+</head>
+
+<body class="dashboard">
+
+<!-- ================= HEADER SECTION ================= -->
+<header class="navbar">
+
+<div class="logo">
+<img src="/static/image/logo1.jpeg" alt="logo">
+<span>CollabMate</span>
+</div>
+
+<nav id="navbarLinks">
+<a href="/">Home</a>
+<a href="/dashboard" class="btn-primary">Get Started</a>
+</nav>
+
+</header>    
+
+<!-- HEADER -->
+<div class="dashboard-container">
+
+<div class="dashboard-header">
+
+<h1>All Mentors</h1>
+
+<!-- <button onclick="logoutUser()">Logout</button> -->
+
+</div>
+
+
+<!-- SEARCH BAR -->
+
+<div class="search-bar">
+
+<input id="skill" placeholder="Search any skill — React, Python, UI/UX...">
+
+<button onclick="searchSkill()">Search</button>
+
+</div>
+
+
+<!-- MAIN LAYOUT -->
+
+<div class="main-layout">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h3>CATEGORY</h3>
+
+<ul>
+
+<li class="active" onclick="searchCategory('', this)">All</li>
+
+<li onclick="searchCategory('Frontend', this)">Frontend</li>
+
+<li onclick="searchCategory('Backend', this)">Backend</li>
+
+<li onclick="searchCategory('AI', this)">AI & ML</li>
+
+<li onclick="searchCategory('Design', this)">Design</li>
+
+<li onclick="searchCategory('DevOps', this)">DevOps</li>
+
+<li onclick="searchCategory('Mobile', this)">Mobile</li>
+
+<li onclick="searchCategory('Marketing', this)">Marketing</li>
+
+</ul>
+
+<h3>EXPERIENCE</h3>
+
+<ul>
+
+<li class="active">All levels</li>
+
+<li onclick="searchCategory('0-5 years', this)">0–5 years</li>
+
+<li onclick="searchCategory('5-10 years', this)">5–10 years</li>
+
+<li onclick="searchCategory('10+ years', this)">10+ years</li>
+
+</ul>
+
+</div>
+
+
+<!-- RESULTS SECTION -->
+
+<div class="mentor-content">
+
+<p class="mentor-count">Mentors Found</p>
+
+<div class="results" id="results">
+
+<!-- mentor cards from search.js will appear here -->
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- ================= footer ================= -->
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- LEFT LINKS -->
+
+<div class="footer-links">
+
+<div class="link-column">
+<a href="/">Home</a>
+<a href="/about">About Us</a>
+<a href="#">Contact</a>
+</div>
+
+<div class="link-column">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+</div>
+
+</div>
+
+<!-- CENTER BRAND -->
+
+<div class="footer-brand">
+
+<h2>CollabMate</h2>
+
+<p>
+The First Global Platform for Developers to Fulfill All Their Tech Needs.
+</p>
+
+</div>
+
+<!-- SOCIAL ICONS -->
+
+<div class="footer-social">
+
+<a href="#"><i class="fab fa-github"></i></a>
+<a href="https://discord.com/users/1402838737393811596"><i class="fab fa-discord"></i></a>
+<a href="https://www.linkedin.com/in/anand-kumar-patel-ba9607371/"><i class="fab fa-linkedin-in"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="https://www.instagram.com/patel_anand7042?igsh=MWd1NTc5bGZxYjQ3OA=="><i class="fab fa-instagram"></i></a>
+
+</div>
+
+</div>
+
+<hr>
+
+<p class="footer-bottom">
+© 2025 CollabMate . All Rights Reserved.
+</p>
+
+</footer>
+
+<!-- FontAwesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</body>
+</html>

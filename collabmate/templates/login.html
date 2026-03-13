@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Login</title>
+
+<link rel="stylesheet" href="/static/css/style.css">
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+<script src="/static/firebase/firebase-config.js"></script>
+<script src="/static/js/firebase-auth.js"></script>
+
+</head>
+
+<body>
+
+<div class="auth-container">
+
+<div class="auth-left">
+
+<div class="logo">
+<img src="/static/image/logo1.jpeg" style="height:75px;" alt="logo">
+</div>
+<h1 style="margin-bottom:20px;">CompanyHub</h1>
+
+<p>Your professional network for discovering companies and opportunities.</p>
+
+</div>
+
+
+<div class="auth-right">
+
+<div class="form-box">
+
+<h2>Welcome back</h2>
+
+<input type="email" id="email" placeholder="Enter your email">
+
+<input type="password" id="password" placeholder="Enter your password">
+
+<button onclick="loginUser()">Sign In</button>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

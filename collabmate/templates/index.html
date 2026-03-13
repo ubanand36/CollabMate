@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CollabMate</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="stylesheet" href="/static/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">
+<img src="/static/image/logo1.jpeg" alt="logo">
+<span>CollabMate</span>
+</div>
+
+<nav id="navbarLinks">
+<a href="/login">Login</a>
+<a href="/register" class="btn-primary">Get Started</a>
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-badge">500+ mentors ready to help</div>
+
+<h1>
+Find Experienced Mentors <br>
+for <span>Any Skill</span> Instantly
+</h1>
+
+<p>
+Search any skill, discover verified professionals, and connect via LinkedIn in seconds.
+</p>
+
+<div class="search-box">
+<input id="homeSkill" placeholder="Search any skill — React, Python, UI/UX...">
+<button onclick="goSearch()">Search</button>
+</div>
+
+<div class="trending">
+<span>Trending:</span>
+<span class="tag">React</span>
+<span class="tag">Python</span>
+<span class="tag">Machine Learning</span>
+<span class="tag">UI/UX</span>
+<span class="tag">TypeScript</span>
+<span class="tag">Node.js</span>
+</div>
+
+</section>
+
+
+<!-- RECOMMENDED MENTORS -->
+
+<section class="mentors">
+
+<h2>Recommended Mentors</h2>
+<p class="subtitle">Top-rated professionals ready to help you grow</p>
+
+<div class="mentor-grid">
+
+<div class="mentor-card">
+
+<div class="mentor-top">
+
+<img src="https://media.licdn.com/dms/image/v2/D4E03AQHYoiACx9zmYA/profile-displayphoto-scale_400_400/B4EZh5a9tuGUAg-/0/1754383769832?e=1775088000&v=beta&t=ypIz2A8QpFR2Xb3oQ-Ng4JOK8i4ZMGqyP2chkUIACjM">
+
+<div>
+<h3>Anand Kumar Patel</h3>
+<p>Exploring AI & Open Source · ECWoC 2026</p>
+</div>
+
+</div>
+
+<p class="mentor-desc">
+Passionate about building accessible and performant web applications.
+</p>
+
+<div class="skills">
+<span>Python</span>
+<span>HTML</span>
+<span>CSS</span>
+<span>Javascript</span>
+</div>
+
+<div class="mentor-footer">
+<span>Fresher</span>
+<a href="https://www.linkedin.com/in/anand-kumar-patel-ba9607371/">LinkedIn ↗</a>
+</div>
+
+</div>
+
+
+<div class="mentor-card">
+
+<div class="mentor-top">
+
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+<div>
+<h3>Marcus Johnson</h3>
+<p>Machine Learning Lead · OpenAI</p>
+</div>
+
+</div>
+
+<p class="mentor-desc">
+Leading ML research teams for over a decade.
+</p>
+
+<div class="skills">
+<span>Python</span>
+<span>Machine Learning</span>
+<span>Deep Learning</span>
+</div>
+
+<div class="mentor-footer">
+<span>12 years exp</span>
+<a href="#">LinkedIn ↗</a>
+</div>
+
+</div>
+
+
+<div class="mentor-card">
+
+<div class="mentor-top">
+
+<img src="https://randomuser.me/api/portraits/women/65.jpg">
+
+<div>
+<h3>Priya Patel</h3>
+<p>UX Design Director · Figma</p>
+</div>
+
+</div>
+
+<p class="mentor-desc">
+Design leader focused on creating intuitive experiences.
+</p>
+
+<div class="skills">
+<span>UI/UX</span>
+<span>Figma</span>
+<span>Design Systems</span>
+</div>
+
+<div class="mentor-footer">
+<span>10 years exp</span>
+<a href="#">LinkedIn ↗</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="view-all">
+<a href="/dashboard">View all mentors →</a>
+</div>
+
+</section>
+
+
+<!-- WHY DEVBRIDGE -->
+
+<section class="why"> 
+    <h2>Why CollabMate?</h2> 
+    <p class="subtitle">Built to make mentorship simple and accessible</p> 
+    <div class="features"> 
+        <div class="feature">
+            <div class="why-icon"><i class="fa-solid fa-magnifying-glass" style="color: rgb(255, 255, 255);"></i></div> 
+            <h3>Skill Search</h3> 
+            <p>Find mentors by the exact tech stack you need help with</p> 
+        </div> 
+
+        <div class="feature"> 
+            <div class="why-icon"><i class="fa-solid fa-user" style="color: rgb(255, 255, 255);"></i></div>
+            <h3>Verified Mentors</h3> 
+            <p>Every mentor is reviewed and verified by our team</p> 
+        </div> 
+
+        <div class="feature">
+            <div class="why-icon"><i class="fa-solid fa-globe" style="color: rgb(255, 255, 255);"></i></div> 
+            <h3>Global Network</h3> 
+            <p>Connect with professionals across every timezone</p> 
+        </div>
+        
+        <div class="feature">
+            <div class="why-icon"><i class="fa-solid fa-comments" style="color: rgb(255, 255, 255);"></i></div> 
+            <h3>Instant Connect</h3> 
+            <p>One-click LinkedIn connect — zero friction</p>
+         </div>
+    </div>
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section class="how">
+
+<h2>How It Works</h2>
+<p class="subtitle">Three simple steps to your next mentor</p>
+
+<div class="steps">
+
+<div class="step">
+<div class="step-number">1</div>
+<h3>Search a Skill</h3>
+<p>Type any skill — React, Python, UI/UX.</p>
+</div>
+
+<div class="step">
+<div class="step-number">2</div>
+<h3>Browse Mentors</h3>
+<p>See curated professionals with ratings and skills.</p>
+</div>
+
+<div class="step">
+<div class="step-number">3</div>
+<h3>Connect</h3>
+<p>Click through to LinkedIn and start a conversation.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>Share Your Expertise</h2>
+
+<p>
+Join CollabMate as a mentor and help the next generation of learners grow.
+</p>
+
+<a href="/register" class="cta-btn">Become a Mentor →</a>
+
+</section>
+
+<!-- TRENDING SKILLS -->
+
+<section class="trending-skills">
+
+<h2>📈 Trending Skills</h2>
+<p class="subtitle">Most searched this month</p>
+
+<div class="trending-grid">
+
+<span>React</span>
+<span>Python</span>
+<span>Machine Learning</span>
+<span>UI/UX</span>
+<span>TypeScript</span>
+<span>Node.js</span>
+<span>AI</span>
+<span>Docker</span>
+<span>Next.js</span>
+<span>Flutter</span>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+<div class="footer-container">
+
+<div class="footer-brand">
+
+<h3>CollabMate</h3>
+
+<p>
+Connecting learners with amazing mentors,
+one skill at a time.
+</p>
+
+</div>
+
+
+<div class="footer-col">
+
+<h4>Platform</h4>
+
+<a href="/dashboard">Find Mentors</a>
+<a href="#">Become a Mentor</a>
+
+</div>
+
+
+<div class="footer-col">
+
+<h4>Popular Skills</h4>
+
+<a href="#">React</a>
+<a href="#">Python</a>
+<a href="#">UI/UX</a>
+<a href="#">Machine Learning</a>
+
+</div>
+
+
+<div class="footer-col">
+
+<h4>Company</h4>
+
+<a href="/about">About</a>
+<a href="#">Contact</a>
+<a href="#">Privacy</a>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<p>© 2026 CollabMate . Built with ❤️ for creators and developers.</p>
+
+</div>
+
+</footer>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+<script src="/static/firebase/firebase-config.js"></script>
+<script src="/static/js/firebase-auth.js"></script>
+
+
+<script>
+
+firebase.auth().onAuthStateChanged(function(user){
+
+if(user){
+
+document.getElementById("navbarLinks").innerHTML=`
+<span>${user.email}</span>
+<a href="/dashboard">Dashboard</a>
+<a onclick="logoutUser()">Logout</a>
+`
+
+}
+
+})
+
+function goSearch(){
+
+firebase.auth().onAuthStateChanged(function(user){
+
+if(user){
+window.location="/dashboard"
+}else{
+window.location="/register"
+}
+
+})
+
+}
+
+</script>
+
+</body>
+</html>

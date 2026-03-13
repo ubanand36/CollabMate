@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, jsonify
 from serpapi import GoogleSearch
-import os
 
 app = Flask(__name__)
 
@@ -41,7 +40,7 @@ def search():
     params = {
         "engine": "google",
         "q": f"site:linkedin.com/in {skill} developer",
-        "api_key": os.environ.get("SERPAPI_KEY"),
+        "api_key": "e982c35751fcf5b616da20a53c8b2e37888ee7df15e3a42f3730043767c02233",
         "num": 5
     }
 
@@ -65,4 +64,4 @@ def search():
 # ---------------- RUN SERVER ---------------- #
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+    app.run(debug=True)

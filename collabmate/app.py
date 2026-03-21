@@ -47,6 +47,33 @@ def about():
 
 @app.route("/api/firebase-config", methods=["GET"])
 def firebase_config():
+    # Map client config keys to their corresponding environment variable names
+    required_env_vars = {
+        "apiKey": "FIREBASE_API_KEY",
+        "authDomain": "FIREBASE_AUTH_DOMAIN",
+        "projectId": "FIREBASE_PROJECT_ID",
+        "storageBucket": "FIREBASE_STORAGE_BUCKET",
+        "messagingSenderId": "FIREBASE_MESSAGING_SENDER_ID",
+        "appId": "FIREBASE_APP_ID",
+        # measurementId is often optional; leave it out of required set
+    }
+
+    missing_keys = [
+        client_key
+        for client_key, env_name in required_env_vars.items()
+        if not os.getenv(env_name, "")
+    ]
+
+    if missing_keys:
+        return (
+            jsonify(
+                {
+                    "error": "Firebase configuration is incomplete",
+                    "missingKeys": missing_keys,
+                }
+            ),
+            500,
+        )
     return jsonify(get_firebase_web_config())
 
 

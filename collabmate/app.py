@@ -1,7 +1,22 @@
+import os
+
 from flask import Flask, render_template, request, jsonify
 from serpapi import GoogleSearch
 
 app = Flask(__name__)
+
+
+def get_firebase_web_config():
+    config = {
+        "apiKey": os.getenv("FIREBASE_API_KEY", ""),
+        "authDomain": os.getenv("FIREBASE_AUTH_DOMAIN", ""),
+        "projectId": os.getenv("FIREBASE_PROJECT_ID", ""),
+        "storageBucket": os.getenv("FIREBASE_STORAGE_BUCKET", ""),
+        "messagingSenderId": os.getenv("FIREBASE_MESSAGING_SENDER_ID", ""),
+        "appId": os.getenv("FIREBASE_APP_ID", ""),
+        "measurementId": os.getenv("FIREBASE_MEASUREMENT_ID", ""),
+    }
+    return {key: value for key, value in config.items() if value}
 
 # ---------------- ROUTES ---------------- #
 
@@ -30,6 +45,11 @@ def about():
     return render_template("about.html")
 
 
+@app.route("/api/firebase-config", methods=["GET"])
+def firebase_config():
+    return jsonify(get_firebase_web_config())
+
+
 # ---------------- SEARCH API ---------------- #
 
 @app.route("/search", methods=["POST"])
@@ -40,9 +60,12 @@ def search():
     params = {
         "engine": "google",
         "q": f"site:linkedin.com/in {skill} developer",
-        "api_key": "e982c35751fcf5b616da20a53c8b2e37888ee7df15e3a42f3730043767c02233",
+        "api_key": os.getenv("SERPAPI_API_KEY", ""),
         "num": 5
     }
+
+    if not params["api_key"]:
+        return jsonify({"error": "SERPAPI_API_KEY is not configured"}), 500
 
     search = GoogleSearch(params)
     results = search.get_dict()

@@ -1,13 +1,24 @@
-// Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBK-BHorRztdxUjKZWSdi9yKd3SQPvRlXE",
-  authDomain: "collabmate-ai-53941.firebaseapp.com",
-  projectId: "collabmate-ai-53941",
-  storageBucket: "collabmate-ai-53941.firebasestorage.app",
-  messagingSenderId: "789622234866",
-  appId: "1:789622234866:web:f1b8291921aea068eb7a6b",
-  measurementId: "G-W604B1RY8H"
-};
+async function initFirebase() {
+  try {
+    const response = await fetch('/api/firebase-config', {
+      method: 'GET',
+      cache: 'no-store'
+    });
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+    if (!response.ok) {
+      throw new Error('Failed to load Firebase config');
+    }
+
+    const firebaseConfig = await response.json();
+
+    if (!firebaseConfig.apiKey || !firebaseConfig.projectId || !firebaseConfig.appId) {
+      throw new Error('Firebase config is incomplete');
+    }
+
+    firebase.initializeApp(firebaseConfig);
+  } catch (error) {
+    console.error('Firebase initialization failed:', error);
+  }
+}
+
+initFirebase();
